@@ -1,0 +1,16 @@
+{
+    "name": "thoth/thoth-engine",
+    "description": "An online text-based RPG engine",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Marquardt",
+            "email": "fernando.marquardt@gmail.com"
+        }
+    ],
+    "require": {
+        "latte/latte": "^3.0",
+        "tracy/tracy": "^2.10"
+    }
+}

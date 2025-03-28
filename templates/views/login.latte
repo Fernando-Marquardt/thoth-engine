@@ -1,0 +1,42 @@
+{layout '../layouts/site.latte'}
+
+{parameters string $csrf}
+
+<div n:block="content" class="flex flex-row gap-8 w-3xl mx-auto">
+    <div class="flex-1 text-justify">
+        <p class="mb-4">
+            <strong>Welcome to Thoth Engine</strong> – Where Worlds Are Forged in Code and Legend
+
+            Enter the world. The legend begins now.
+        </p>
+        <p class="mb-4">
+            Step into a realm where imagination meets innovation. Thoth Engine is the heart of immersive RPG experiences, bringing rich worlds, deep mechanics, and limitless storytelling to life.
+        </p>
+        <p>
+            Whether you're a player embarking on epic quests or a developer crafting entire universes, Thoth Engine is your gateway to adventure.
+        </p>
+        <ul class="list-disc ml-8 my-4">
+            <li>Forge Your Story</li>
+            <li>Shape Your Destiny</li>
+            <li>Unleash the Power of Thoth</li>
+        </ul>
+        <p>
+            <strong>Enter the world. The legend begins now.</strong>
+        </p>
+    </div>
+    <div class="flex-1">
+        <div class="border-1 p-4">
+            <form action='authenticate.php' method='POST' name='login' onsubmit='return saveme();'>
+                Username: <input type='text' name='username' /><br />
+                Password: <input type='password' name='password' /><br />
+                Remember me?<br />
+                <input type='radio' value='ON' name='save' /> Yes
+                <input type='radio' value='OFF' name='save' /> No<br />
+                <input type='hidden' name='verf' value="{$csrf}" />
+                <input type='submit' value='Submit'>
+            </form>
+        </div>
+
+        <h3><a href='register.php'>REGISTER NOW!</a></h3>
+    </div>
+</div>

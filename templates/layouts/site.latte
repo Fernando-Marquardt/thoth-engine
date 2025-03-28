@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="/assets/icons/favicon.ico">
+    <link rel="stylesheet" href="/styles/index.css">
+
+    <title>{= GAME_NAME}</title>
+</head>
+<body class="bg-background text-foreground">
+    <div class="flex flex-col gap-4 min-h-screen">
+        <header class="bg-header text-header-foreground py-4">
+            <div class="container mx-auto">Thoth Engine</div>
+        </header>
+        <main class="flex-1 container mx-auto">
+            {block content}{/block}
+        </main>
+        <footer class="container mx-auto my-4 text-center">Powered by Thoth Engine &copy; {= GAME_YEAR} {= GAME_NAME}</footer>
+    </div>
+</body>
+</html>

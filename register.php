@@ -11,6 +11,8 @@ global $db, $set;
 require_once('globals_nonauth.php');
 //thx to http://www.phpit.net/code/valid-email/ for valid_email
 
+$game_name = GAME_NAME;
+
 /**
  * @param $email
  * @return bool
@@ -24,9 +26,9 @@ print
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>{$set['game_name']}</title>
+<title>$game_name</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<script type="text/javascript" src="{$set['jquery_location']}"></script>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
 <link href="css/register.css" type="text/css" rel="stylesheet" />
 </head>
@@ -56,7 +58,7 @@ $username =
                 ? stripslashes($_POST['username']) : '';
 if (!empty($username))
 {
-    if ($set['regcap_on'])
+    if (isset($set['regcap_on']) && $set['regcap_on'])
     {
         if (!$_SESSION['captcha'] || !isset($_POST['captcha'])
                 || $_SESSION['captcha'] != $_POST['captcha'])
@@ -203,7 +205,7 @@ if (!empty($username))
 }
 else
 {
-    if ($set['regcap_on'])
+    if (isset($set['regcap_on']) && $set['regcap_on'])
     {
         /** @noinspection SpellCheckingInspection */
         $chars               =
@@ -214,7 +216,7 @@ else
             $_SESSION['captcha'] .= $chars[rand(0, $len - 1)];
     }
 
-    echo "<h3>{$set['game_name']} Registration</h3>";
+    echo "<h3>$game_name Registration</h3>";
     echo "<form action=register.php method=post>
             <table width='75%' class='table' cellspacing='1'>
                 <tr>
@@ -274,7 +276,7 @@ else
         print $_GET['REF'];
     }
     echo "' />";
-    if ($set['regcap_on'])
+    if (isset($set['regcap_on']) && $set['regcap_on'])
     {
         echo "<tr>
 				<td colspan='3'>

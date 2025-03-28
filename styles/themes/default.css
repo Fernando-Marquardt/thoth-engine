@@ -1,0 +1,7 @@
+:root {
+  --background: var(--color-neutral-300);
+  --foreground: var(--color-neutral-800);
+
+  --header: var(--color-neutral-800);
+  --header-foreground: var(--color-neutral-300);
+}
